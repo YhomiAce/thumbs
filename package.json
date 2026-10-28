@@ -1,0 +1,39 @@
+{
+  "name": "thumbs",
+  "version": "1.0.0",
+  "description": "Image thumbnail and optimisation service with a BullMQ job queue",
+  "main": "dist/web.js",
+  "scripts": {
+    "test": "vitest run",
+    "build": "tsc",
+    "start": "node dist/web.js",
+    "start:worker": "node dist/worker.js",
+    "dev": "tsx watch --env-file=.env src/web.ts",
+    "dev:worker": "tsx watch --env-file=.env src/worker.ts",
+    "typecheck": "tsc -p tsconfig.test.json"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bullmq": "^6.5.0",
+    "express": "^5.3.0",
+    "ioredis": "^6.0.0",
+    "kysely": "^0.29.7",
+    "multer": "^2.5.0",
+    "pg": "^8.23.1",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^22.20.5",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  }
+}
